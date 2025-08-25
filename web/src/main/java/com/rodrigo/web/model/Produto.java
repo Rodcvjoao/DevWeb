@@ -5,12 +5,13 @@ import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Produto {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String imagem;
     private String nome;
@@ -22,7 +23,22 @@ public class Produto {
     private LocalDate dataCadastro;
     private String categoria;
 
-    // --- Getters ---
+    public Produto(){
+    }
+
+    public Produto(String imagem, String nome, String slug,
+                   String descricao, boolean disponivel, int qtdEstoque,
+                   BigDecimal preco, LocalDate dataCadastro, String categoria) {
+        this.imagem = imagem;
+        this.nome = nome;
+        this.slug = slug;
+        this.descricao = descricao;
+        this.disponivel = disponivel;
+        this.qtdEstoque = qtdEstoque;
+        this.preco = preco;
+        this.dataCadastro = dataCadastro;
+        this.categoria = categoria;
+    }
 
     public Long getId() {
         return id;
@@ -63,8 +79,6 @@ public class Produto {
     public String getCategoria() {
         return categoria;
     }
-
-    // --- Setters ---
 
     public void setId(Long id) {
         this.id = id;

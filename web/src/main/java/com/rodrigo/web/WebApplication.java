@@ -3,6 +3,7 @@ package com.rodrigo.web;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,7 +11,9 @@ import com.rodrigo.web.model.Produto;
 import com.rodrigo.web.repository.ProdutoRepository;;
 
 @SpringBootApplication
-public class WebApplication {
+public class WebApplication implements CommandLineRunner{
+
+	private ProdutoRepository produtoRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);
