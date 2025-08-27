@@ -3,6 +3,7 @@ package com.rodrigo.web;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,7 @@ import com.rodrigo.web.repository.ProdutoRepository;;
 @SpringBootApplication
 public class WebApplication implements CommandLineRunner{
 
+	@Autowired
 	private ProdutoRepository produtoRepository;
 
 	public static void main(String[] args) {
